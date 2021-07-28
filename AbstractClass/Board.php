@@ -1,5 +1,7 @@
 <?php
 
+namespace AbstractClass;
+
 abstract class Board{
 
    protected $dice1;
@@ -9,7 +11,7 @@ abstract class Board{
 //    protected $throw = ''; //dice 1 + dice 2
 //    protected $currentPosition = ''; 
    protected $startPosition = 0; 
-//    protected $lastPosition = ''; 
+   protected $lastPosition = ''; 
    protected $player1Throw;
    protected $player2Throw;
 
@@ -24,7 +26,12 @@ public function __construct(){
           
            }
        }
-       $this->player1Throw = $this->dice1 + $this->dice2;
+      //  $this->startPosition = 0;
+      //  $this->lastPosition = 250;
+   }
+
+   public function playerMovement(){
+     $this->player1Throw = $this->dice1 + $this->dice2;
       $this->player1Movement = $this->player1Throw;
 
        echo $this->player1Movement ."\n";
@@ -35,9 +42,3 @@ public function __construct(){
    }
 }
 
-class BoardGame extends Board
-{
-}
-
-$game = new BoardGame;
-$game->gameBoard();
